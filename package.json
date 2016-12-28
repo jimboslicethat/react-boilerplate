@@ -8,8 +8,9 @@
   "scripts": {
     "build": "rm -rf ./build/bundle.js && webpack",
     "start": "webpack-dev-server --content-base build/",
-    "test": "TODO",
-    "test:watch": "TODO"
+    "test": "mocha",
+    "test:watch": "mocha -w",
+    "lint": "eslint ./src"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
@@ -21,6 +22,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.18.0",
+    "chai": "^3.5.0",
     "css-loader": "^0.26.1",
     "eslint": "^3.12.2",
     "eslint-config-standard": "^6.2.1",
@@ -30,9 +32,12 @@
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-react": "^6.8.0",
     "eslint-plugin-standard": "^2.0.1",
+    "mocha": "^3.2.0",
     "react": "^15.4.1",
     "react-css-modules": "^4.1.0",
     "react-dom": "^15.4.1",
+    "sinon": "^1.17.6",
+    "sinon-chai": "^2.8.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
