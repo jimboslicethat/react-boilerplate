@@ -1,4 +1,4 @@
-import webpack from 'webpack'
+import webpack from 'webpack' // eslint-disable-line no-unused-vars
 
 const PORT = 3000
 
@@ -13,6 +13,13 @@ export default {
         query: {
           presets: ['es2015', 'react', 'stage-0']
         }
+      },
+      {
+        test: /\.css$/,
+        loaders: [
+          'style?sourceMap',
+          'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
+        ]
       }
     ]
   },
