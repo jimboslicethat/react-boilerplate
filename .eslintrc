@@ -2,10 +2,17 @@
   "env": {
     "mocha": true
   },
-  "extends": [ "standard" ],
-  "parser": "babel-eslint",
+  "extends": [ "standard", "standard-react" ],
+  "plugins": [ "mocha" ],
+  "globals": {
+    "expect": true
+  },
   "rules": {
-    "arrow-parens": [2, "as-needed"],
-    "curly": 0
+    "curly": "off",
+    "generator-star-spacing": "off",
+    "jsx-quotes": [ "error", "prefer-double" ],
+    "space-before-function-paren": [ "error", "never" ],
+    "yield-star-spacing": [ "error", { "before": false, "after": true } ],
+    "mocha/no-exclusive-tests": "error"
   }
 }
