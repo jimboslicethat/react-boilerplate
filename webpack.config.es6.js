@@ -1,24 +1,26 @@
-// getAppDependencies() => {
-//   return [
-
-//   ]
-// }
+import webpack from 'webpack'
 
 const PORT = 3000
 
 export default {
-  entry: {
-    main: './src/index.js'
+  entry: './src/index.js',
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015', 'react', 'stage-0']
+        }
+      }
+    ]
   },
-  loaders: [
-    { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
-  ],
   output: {
     path: './build',
     publicPath: '/assets/',
     filename: 'bundle.js'
   },
-  // plugins: getPlugins(),
   devServer: {
     host: '0.0.0.0',
     port: PORT
