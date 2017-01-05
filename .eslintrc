@@ -3,7 +3,7 @@
     "mocha": true
   },
   "extends": [ "standard", "standard-react" ],
-  "plugins": [ "mocha" ],
+  "plugins": [ "babel", "mocha" ],
   "globals": {
     "expect": true
   },

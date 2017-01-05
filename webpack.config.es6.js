@@ -2,6 +2,7 @@ import webpack from 'webpack' // eslint-disable-line no-unused-vars
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import LiveReloadPlugin from 'webpack-livereload-plugin'
 import cssNext from 'postcss-cssnext'
+import cssImport from 'postcss-import'
 import postCssVariables from 'postcss-variables'
 
 const PORT = 3000
@@ -16,7 +17,8 @@ export default {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react', 'stage-0']
+          presets: ['es2015', 'react', 'stage-0'],
+          plugins: ['transform-decorators-legacy']
         }
       },
       {
@@ -36,11 +38,11 @@ export default {
   },
   plugins: [
     new HtmlWebpackPlugin({ template: './index.local.html' }),
-    new LiveReloadPlugin({port: LIVE_RELOAD_PORT})
+    new LiveReloadPlugin({ port: LIVE_RELOAD_PORT })
   ],
-  // Effectively acts as a substitute fro postcss.config.js
   postcss: (webpack) => ([
     cssNext,
+    cssImport,
     postCssVariables
   ]),
   cssnext: {
