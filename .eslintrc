@@ -13,7 +13,11 @@
     "generator-star-spacing": "off",
     "jsx-quotes": [ "error", "prefer-double" ],
     "space-before-function-paren": [ "error", "never" ],
+    "react/jsx-tag-spacing": [2, { "beforeSelfClosing": "always" }],
     "yield-star-spacing": [ "error", { "before": false, "after": true } ],
-    "mocha/no-exclusive-tests": "error"
+    "mocha/no-exclusive-tests": "error",
+    "no-unused-vars": [2, { "vars": "all", "args": "none", "ignoreRestSiblings": true }],
+    "no-unused-expressions": "off",
+    "react/prop-types": [2, { "skipUndeclared": true }]
   }
 }
