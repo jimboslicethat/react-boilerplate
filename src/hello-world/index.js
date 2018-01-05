@@ -5,7 +5,7 @@ import css from './index.css'
 
 class HelloWorld extends React.Component {
   render() {
-    return <h1 styleName="hello-world">Welcome to React, with Babel, Webpack, and Postcss</h1>
+    return <h1 styleName="hello-world">Welcome to React, with babel, webpack, postcss, and react css modules</h1>
   }
 }
 
